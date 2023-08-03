@@ -1,7 +1,9 @@
-import 'package:banao/widgets/bootom_bar_item.dart';
+import 'package:banao/screen/widgets/bootom_bar_item.dart'; // Importing the BottomBarItem widget.
 import 'package:flutter/material.dart';
 
+// Define a stateless widget named BottomBar.
 class BottomBar extends StatelessWidget {
+  // Constructor for the BottomBar class.
   const BottomBar({
     super.key,
   });
@@ -17,27 +19,32 @@ class BottomBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          BootomBarItem(
-            color: Color(0xFF598BED),
-            imageUrl: 'assets/images/Home.png',
-            text: 'Home',
+          // Display the first item in the bottom navigation bar.
+          BottomBarItem(
+            color: Color(0xFF598BED), // Set the text color for this item.
+            imageUrl: 'assets/images/Home.png', // Set the image asset path.
+            text: 'Home', // Set the text for this item.
           ),
-          BootomBarItem(
+          // Display the second item in the bottom navigation bar.
+          BottomBarItem(
             color: Color(0xFF939BA3),
             imageUrl: 'assets/images/Book-open-lite.png',
             text: 'Learn',
           ),
-          BootomBarItem(
+          // Display the third item in the bottom navigation bar.
+          BottomBarItem(
             color: Color(0xFF939BA3),
             imageUrl: 'assets/images/Layout.png',
             text: 'Hub',
           ),
-          BootomBarItem(
+          // Display the fourth item in the bottom navigation bar.
+          BottomBarItem(
             color: Color(0xFF939BA3),
             imageUrl: 'assets/images/Comment.png',
             text: 'Chat',
           ),
-          BootomBarItem(
+          // Display the fifth item in the bottom navigation bar.
+          BottomBarItem(
             color: Color(0xFF598BED),
             imageUrl: 'assets/images/Ellipse 14.png',
             text: 'Profile',
