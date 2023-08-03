@@ -1,11 +1,12 @@
-
+import 'package:banao/model/program.dart';
 import 'package:flutter/material.dart';
 
 class ProgramItem extends StatelessWidget {
   const ProgramItem({
     super.key,
+    required this.program,
   });
-
+  final ProgramModel program;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,11 +31,11 @@ class ProgramItem extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 12),
+          Padding(
+            padding: const EdgeInsets.only(left: 12),
             child: Text(
-              'LIFESTYLE',
-              style: TextStyle(
+              program.category,
+              style: const TextStyle(
                 color: Color(0xFF598BED),
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
@@ -44,11 +45,11 @@ class ProgramItem extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 12.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 12.0),
             child: Text(
-              'A complete guide for your new born baby',
-              style: TextStyle(
+              program.name,
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
@@ -59,11 +60,11 @@ class ProgramItem extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 12.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 12.0),
             child: Text(
-              '16 lessons',
-              style: TextStyle(
+              '${program.lesson} lessons',
+              style: const TextStyle(
                 color: Color(0xFF6C747A),
                 fontSize: 12,
                 fontWeight: FontWeight.w500,

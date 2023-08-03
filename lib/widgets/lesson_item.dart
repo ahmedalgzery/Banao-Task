@@ -1,15 +1,18 @@
+import 'package:banao/model/loesson.dart';
 import 'package:flutter/material.dart';
 
 class LessonItem extends StatelessWidget {
   const LessonItem({
     super.key,
+    required this.lesson,
   });
 
+  final LessonModel lesson;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 240,
-      height: 280,
+      height: 300,
       margin: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -30,11 +33,11 @@ class LessonItem extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 12),
+          Padding(
+            padding: const EdgeInsets.only(left: 12),
             child: Text(
-              'Babycare',
-              style: TextStyle(
+              lesson.category,
+              style: const TextStyle(
                 color: Color(0xFF598BED),
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
@@ -44,11 +47,11 @@ class LessonItem extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 12.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 12.0),
             child: Text(
-              'Understanding of human behaviour',
-              style: TextStyle(
+              lesson.name,
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
@@ -59,20 +62,20 @@ class LessonItem extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 12.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 12.0),
             child: Row(
               children: [
                 Text(
-                  '3 min',
-                  style: TextStyle(
+                  '${lesson.duration} min',
+                  style: const TextStyle(
                     color: Color(0xFF6C747A),
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Spacer(),
-                Icon(
+                const Spacer(),
+                const Icon(
                   Icons.lock_outline,
                   color: Color(0xFF6C747A),
                   size: 30,

@@ -1,4 +1,6 @@
 
+import 'package:banao/model/program.dart';
+import 'package:banao/service/get_progarm.dart';
 import 'package:banao/widgets/program_item.dart';
 import 'package:flutter/material.dart';
 
@@ -35,14 +37,27 @@ class ProgramForYou extends StatelessWidget {
             height: 35,
           ),
           SizedBox(
-            height: 280,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              itemCount: 10,
-              itemBuilder: (context, index) => const ProgramItem(),
-            ),
-          ),
+            height: 270,
+            child: FutureBuilder<List<ProgramModel>>(
+                future: PrgarmService().getProgram(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    List<ProgramModel> program = snapshot.data!;
+                    return ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: program.length,
+                      itemBuilder: (context, index) => ProgramItem(
+                        program: program[index],
+                      ),
+                    );
+                  } else {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                }),
+          )
         ],
       ),
     );

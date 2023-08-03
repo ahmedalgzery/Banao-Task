@@ -1,3 +1,4 @@
+import 'package:banao/service/get_lesson.dart';
 import 'package:banao/widgets/bottom_bar.dart';
 import 'package:banao/widgets/event_and_experiences.dart';
 import 'package:banao/widgets/intro_section.dart';
@@ -75,6 +76,10 @@ class MyHomePage extends StatelessWidget {
             BottomBar(),
           ],
         ),
+        floatingActionButton: FloatingActionButton(onPressed: ()  {
+          LessonService().getLesson();
+          
+        },child: const Icon(Icons.add),),
       ),
     );
   }

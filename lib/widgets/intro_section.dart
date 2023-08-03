@@ -10,7 +10,7 @@ class IntroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * .27,
+      height: MediaQuery.of(context).size.height * .35,
       color: const Color(0xFFEEF3FD),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: const Column(
